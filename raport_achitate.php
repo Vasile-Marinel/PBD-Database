@@ -22,6 +22,22 @@ $sql = "
 $result = $conn->query($sql);
 
 echo "
+    <style>
+        .error-message {
+            width: 50%;
+            margin: 20px auto;
+            padding: 15px;
+            background-color: #ffcccc;
+            color: #a00;
+            border: 1px solid #a00;
+            border-radius: 5px;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            font-size: 1.2em;
+        }
+    </style>";
+
+echo "
 <style>
     body {
         font-family: Arial, sans-serif;
@@ -84,7 +100,10 @@ if ($result->num_rows > 0) {
 
     echo "</table>";
 } else {
-    echo "Nu există produse achitate integral.";
+    echo "
+    <div class='error-message'>
+        Nu există produse achitate integral.
+    </div>";
 }
 
 $conn->close();
