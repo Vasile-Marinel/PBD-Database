@@ -21,10 +21,50 @@ $sql = "
 
 $result = $conn->query($sql);
 
+echo "
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f9;
+    }
+    h1 {
+        text-align: center;
+        color: #4CAF50;
+        margin-top: 20px;
+        font-size: 2.5em;
+        font-weight: bold;
+    }
+    table {
+        width: 80%;
+        margin: 20px auto;
+        border-collapse: collapse;
+        font-family: Arial, sans-serif;
+    }
+    th, td {
+        border: 1px solid #ddd;
+        padding: 10px;
+        text-align: center;
+    }
+    th {
+        background-color: #4CAF50;
+        color: white;
+    }
+    tr:nth-child(even) {
+        background-color: #f9f9f9;
+    }
+    tr:hover {
+        background-color: #f1f1f1;
+    }
+</style>
+";
+
 echo "<h1>Raport: Produse Achitate Integral</h1>";
 
 if ($result->num_rows > 0) {
-    echo "<table border='1'>
+    
+    echo "<table>
             <tr>
                 <th>Nume</th>
                 <th>Prenume</th>
